@@ -4,7 +4,7 @@ from utils import exchange_transaction
 from datetime import datetime
 
 
-def data_frame_process(histogram, signal_line, data_frame, is_bigger):
+def data_frame_processing(histogram, signal_line, data_frame, is_bigger):
     for his, sl, df in zip(histogram, signal_line, data_frame.iterrows()):
         if sl > his and not is_bigger:
             exchange_transaction(is_bigger, df[1].date, df[1].open, df[1].close)
@@ -29,7 +29,7 @@ def start_monitoring(*args):
 
         updated_data_frame = data_frame.drop(range(counter))
 
-        data_frame_process(histogram[counter:], signal_line[counter:], updated_data_frame, is_bigger)
+        data_frame_processing(histogram[counter:], signal_line[counter:], updated_data_frame, is_bigger)
     except TypeError:
         return False
 
