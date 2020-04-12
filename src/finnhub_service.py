@@ -20,7 +20,7 @@ def get_client(ticker=None, start=None, end=None):
 
     try:
         r = requests.get(
-            url='https://finnhub.io/api/v1/stock/candle',
+            url=settings.FINNHUB_API_URL,
             params=params
         )
         if r.json()['s'] == 'no_data':
