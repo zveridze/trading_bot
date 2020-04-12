@@ -16,5 +16,6 @@ Bot generate trading operations based on MACD, using historical data. By default
     * -t - Stock ticker (for example APPL).
     * -s - Start date. Set up by default as 2018-01-01.
     * -e - End date. Set up by default as today.
+5. Script generate file with transactions. File located on the root folder.
     
 Command example: ```python3 trading_bot.py -t APPl -s 2018-01-01 -e 2018-03-1```   
